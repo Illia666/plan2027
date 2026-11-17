@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>План роботи на 2026 рік — Державна служба України у справах дітей</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Фірмова палітра children.gov.ua / gov.ua */
+      --gov-navy: #002b5c;
+      --gov-blue: #0057b7;
+      --gov-blue-hover: #004494;
+      --gov-sky: #e6f0fa;
+      --gov-sky-soft: #f2f7fd;
+      --gov-yellow: #ffd700;
+      --gov-warm: #fff8e1;
+      --gov-mint: #e6f6f0;
+      --gov-mint-text: #0f6b4b;
+      --gov-purple-bg: #f0effd;
+      --gov-purple-text: #4338ca;
+
+      --bg: #f5f7fa;
+      --surface: #ffffff;
+      --text: #111827;
+      --text-secondary: #4b5563;
+      --border: #dce3ec;
+      --radius: 12px;
+      --shadow-sm: 0 1px 3px rgba(0, 43, 92, 0.06);
+      --shadow-md: 0 6px 20px rgba(0, 43, 92, 0.08);
+    }
+
+    /* Режим для людей із порушеннями зору (стандарт gov.ua) */
+    body.a11y-large {
+      font-size: 118%;
+    }
+    body.a11y-contrast {
+      --bg: #ffffff;
+      --surface: #ffffff;
+      --text: #000000;
+      --text-secondary: #000000;
+      --border: #000000;
+      --gov-navy: #000000;
+      --gov-blue: #000000;
+      --gov-sky: #f0f0f0;
+      --gov-sky-soft: #f8f8f8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    /* Верхня державна панель */
+    .gov-topbar {
+      background: var(--gov-navy);
+      color: #ffffff;
+      font-size: 12.5px;
+      padding: 7px 24px;
+      border-bottom: 2px solid var(--gov-yellow);
+    }
+
+    .gov-topbar-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .gov-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.92;
+    }
+
+    .gov-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gov-yellow);
+    }
+
+    .a11y-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .a11y-btn {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+
+    .a11y-btn:hover, .a11y-btn.active {
+      background: #ffffff;
+      color: var(--gov-navy);
+      font-weight: 600;
+    }
+
+    /* Основна шапка сайту */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px;
+    }
+
+    .header-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .trident-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: linear-gradient(145deg, var(--gov-blue), var(--gov-navy));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(0, 87, 183, 0.22);
+    }
+
+    .brand-text .agency-name {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--gov-blue);
+      margin-bottom: 2px;
+    }
+
+    .brand-text h1 {
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--gov-navy);
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+
+    .header-tools {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .sync-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      background: var(--gov-sky-soft);
+      border: 1px solid var(--border);
+      padding: 7px 13px;
+      border-radius: 20px;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
+      70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 15px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      transition: all 0.15s;
+    }
+
+    .btn:hover {
+      background: var(--gov-sky-soft);
+      border-color: var(--gov-blue);
+    }
+
+    .btn-primary {
+      background: var(--gov-blue);
+      color: #ffffff;
+      border-color: var(--gov-blue);
+    }
+
+    .btn-primary:hover {
+      background: var(--gov-blue-hover);
+      border-color: var(--gov-blue-hover);
+    }
+
+    /* Breadcrumbs */
+    .breadcrumbs {
+      max-width: 1380px;
+      margin: 14px auto 0;
+      padding: 0 24px;
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumbs a {
+      color: var(--gov-blue);
+      text-decoration: none;
+    }
+
+    .breadcrumbs a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1380px;
+      margin: 18px auto 56px;
+      padding: 0 24px;
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      background: linear-gradient(120deg, var(--gov-navy) 0%, #004799 65%, #0066cc 100%);
+      color: #ffffff;
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-banner::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      top: -40px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-info h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .hero-info p {
+      font-size: 13.5px;
+      opacity: 0.9;
+      max-width: 720px;
+    }
+
+    .hero-metrics {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      padding: 12px 18px;
+      min-width: 135px;
+    }
+
+    .hero-stat-num {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--gov-yellow);
+      line-height: 1.1;
+    }
+
+    .hero-stat-lbl {
+      font-size: 12px;
+      opacity: 0.92;
+      margin-top: 3px;
+    }
+
+    /* KPI Cards */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .kpi-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .kpi-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .kpi-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .kpi-label {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .kpi-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      background: var(--gov-sky);
+      color: var(--gov-blue);
+    }
+
+    .kpi-value {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--gov-navy);
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .kpi-pct {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gov-blue);
+      background: var(--gov-sky);
+      padding: 2px 8px;
+      border-radius: 12px;
+    }
+
+    .kpi-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-top: 6px;
+    }
+
+    /* Quarter Selector Pills */
+    .quarters-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .q-tile {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.15s;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .q-tile:hover {
+      border-color: var(--gov-blue);
+      background: var(--gov-sky-soft);
+    }
+
+    .q-tile.active {
+      background: var(--gov-navy);
+      border-color: var(--gov-navy);
+      color: #ffffff;
+    }
+
+    .q-tile.active .q-sub {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .q-tile.active .q-num {
+      background: var(--gov-yellow);
+      color: var(--gov-navy);
+    }
+
+    .q-title {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .q-sub {
+      font-size: 11.5px;
+      color: var(--text-secondary);
+    }
+
+    .q-num {
+      font-size: 18px;
+      font-weight: 800;
+      background: var(--gov-sky);
+      color: var(--gov-blue);
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    /* Filters */
+    .filters-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin-bottom: 22px;
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      align-items: end;
+    }
+
+    .field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gov-navy);
+      margin-bottom: 6px;
+    }
+
+    .field select,
+    .field input {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 13px;
+      font-family: inherit;
+      color: var(--text);
+      background: #fff;
+    }
+
+    .field select:focus,
+    .field input:focus {
+      outline: none;
+      border-color: var(--gov-blue);
+      box-shadow: 0 0 0 3px rgba(0, 87, 183, 0.12);
+    }
+
+    /* Navigation Tabs */
+    .view-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 9px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-secondary);
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+
+    .tab-btn:hover {
+      border-color: var(--gov-blue);
+      color: var(--gov-blue);
+    }
+
+    .tab-btn.active {
+      background: var(--gov-blue);
+      color: #ffffff;
+      border-color: var(--gov-blue);
+    }
+
+    /* Panels */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 22px;
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .panel-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gov-navy);
+    }
+
+    .analytics-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 960px) {
+      .analytics-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Department Bars */
+    .dept-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 440px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .dept-row {
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      background: var(--gov-sky-soft);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .dept-row:hover {
+      border-color: var(--gov-blue);
+      background: var(--gov-sky);
+    }
+
+    .dept-row.active {
+      border-color: var(--gov-navy);
+      background: var(--gov-sky);
+    }
+
+    .dept-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .dept-name {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .dept-count {
+      font-weight: 700;
+      color: var(--gov-blue);
+      white-space: nowrap;
+    }
+
+    .bar-track {
+      height: 8px;
+      background: #dce6f2;
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .bar-seg-dated { background: var(--gov-blue); }
+    .bar-seg-year { background: #38bdf8; }
+
+    /* Sections List */
+    .sec-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 440px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .sec-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: var(--bg);
+      border: 1px solid transparent;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .sec-row:hover, .sec-row.active {
+      background: var(--gov-sky);
+      border-color: var(--gov-blue);
+    }
+
+    .sec-badge {
+      background: #fff;
+      color: var(--gov-navy);
+      border: 1px solid var(--border);
+      font-weight: 700;
+      font-size: 12px;
+      padding: 3px 10px;
+      border-radius: 12px;
+      white-space: nowrap;
+    }
+
+    /* Heatmap Matrix */
+    .heatmap-wrap {
+      overflow-x: auto;
+    }
+
+    .heatmap-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+    }
+
+    .heatmap-table th {
+      background: var(--gov-sky-soft);
+      color: var(--gov-navy);
+      padding: 10px 12px;
+      text-align: center;
+      border: 1px solid var(--border);
+      font-weight: 700;
+    }
+
+    .heatmap-table th:first-child {
+      text-align: left;
+      min-width: 280px;
+    }
+
+    .heatmap-table td {
+      border: 1px solid var(--border);
+      padding: 9px 12px;
+      text-align: center;
+    }
+
+    .heatmap-table td:first-child {
+      text-align: left;
+      font-weight: 500;
+      background: #fff;
+    }
+
+    .heat-cell {
+      cursor: pointer;
+      font-weight: 700;
+      border-radius: 6px;
+      transition: transform 0.1s;
+    }
+
+    .heat-cell:hover {
+      outline: 2px solid var(--gov-navy);
+    }
+
+    /* Tasks Table & Cards */
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table.plan-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+
+    .plan-table th {
+      background: var(--gov-sky-soft);
+      color: var(--gov-navy);
+      text-align: left;
+      padding: 12px 14px;
+      font-weight: 700;
+      border-bottom: 2px solid var(--gov-blue);
+      white-space: nowrap;
+    }
+
+    .plan-table td {
+      padding: 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .plan-table tr:hover td {
+      background: #f8fbff;
+    }
+
+    .num-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--gov-sky);
+      color: var(--gov-navy);
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      border: 1px solid #c5daf5;
+      transition: all 0.15s;
+    }
+
+    .num-chip:hover {
+      background: var(--gov-blue);
+      color: #fff;
+    }
+
+    .tag-sec {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--gov-blue);
+      background: var(--gov-sky-soft);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+
+    .tag-collab {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gov-purple-text);
+      background: var(--gov-purple-bg);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: 6px;
+    }
+
+    .term-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .term-dated {
+      background: var(--gov-sky);
+      color: var(--gov-navy);
+    }
+
+    .term-year {
+      background: var(--gov-mint);
+      color: var(--gov-mint-text);
+    }
+
+    /* Cards Grid View */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 16px;
+    }
+
+    .task-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      transition: box-shadow 0.15s, border-color 0.15s;
+    }
+
+    .task-card:hover {
+      border-color: var(--gov-blue);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-meta {
+      border-top: 1px dashed var(--border);
+      padding-top: 10px;
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--gov-navy);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      border-left: 4px solid var(--gov-yellow);
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition: all 0.25s;
+      z-index: 999;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      background: var(--gov-navy);
+      color: rgba(255, 255, 255, 0.85);
+      padding: 24px;
+      font-size: 13px;
+      margin-top: 40px;
+    }
+
+    .footer-inner {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hidden { display: none !important; }
+
+    /* Print Styles */
+    @media print {
+      .gov-topbar, .header-tools, .filters-box, .view-tabs, .quarters-bar, footer {
+        display: none !important;
+      }
+      body { background: #fff; }
+      .panel { box-shadow: none; border: 1px solid #ccc; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Державна верхня панель -->
+  <div class="gov-topbar">
+    <div class="gov-topbar-inner">
+      <div class="gov-badge">
+        <span class="gov-dot"></span>
+        <span>Офіційний інформаційно-аналітичний ресурс • children.gov.ua</span>
+      </div>
+      <div class="a11y-controls">
+        <span>Доступність:</span>
+        <button class="a11y-btn" id="btnFont" onclick="toggleLargeFont()">А+ Збільшити шрифт</button>
+        <button class="a11y-btn" id="btnContrast" onclick="toggleContrast()">Контрастний режим</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Шапка порталу -->
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="trident-box" aria-hidden="true">
+          <!-- Малий Державний Герб України (вектор) -->
+          <svg width="26" height="34" viewBox="0 0 36 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 2L15.8 7.5V22.5H12.5V11.2L9.5 8.5V25.5C9.5 29.2 12.2 31.8 15.8 32.3V39.5L13 42.5L18 46L23 42.5L20.2 39.5V32.3C23.8 31.8 26.5 29.2 26.5 25.5V8.5L23.5 11.2V22.5H20.2V7.5L18 2ZM12.5 25.5V24.5H15.8V29.8C13.8 29.4 12.5 27.8 12.5 25.5ZM20.2 29.8V24.5H23.5V25.5C23.5 27.8 22.2 29.4 20.2 29.8Z" fill="#FFD700"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <div class="agency-name">Державна служба України у справах дітей</div>
+          <h1>План роботи на 2026 рік</h1>
+        </div>
+      </div>
+
+      <div class="header-tools">
+        <span class="sync-pill">
+          <span class="pulse-dot"></span>
+          <span id="syncTime">Синхронізація...</span>
+        </span>
+        <button class="btn" onclick="exportCSV()">📥 Експорт у Excel (CSV)</button>
+        <button class="btn" onclick="window.print()">🖨️ Друк / PDF</button>
+        <button class="btn btn-primary" onclick="loadData()">↻ Оновити</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="breadcrumbs" aria-label="Хлібні крихти">
+    <a href="https://children.gov.ua/" target="_blank" rel="noopener">Головна</a>
+    <span>/</span>
+    <span>Діяльність</span>
+    <span>/</span>
+    <strong>Планування роботи на 2026 рік</strong>
+  </nav>
+
+  <main>
+    <!-- Hero банер -->
+    <section class="hero-banner">
+      <div class="hero-info">
+        <h2>Інтерактивний навігатор Плану роботи Служби</h2>
+        <p>Візуалізація пріоритетних напрямів, розподіл заходів між структурними підрозділами, календарні дедлайни та очікувані індикатори результативності.</p>
+      </div>
+      <div class="hero-metrics">
+        <div class="hero-stat">
+          <div class="hero-stat-num" id="heroTotal">—</div>
+          <div class="hero-stat-lbl">Заходів у плані</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" id="heroDepts">—</div>
+          <div class="hero-stat-lbl">Підрозділів залучено</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" id="heroSections">—</div>
+          <div class="hero-stat-lbl">Тематичних розділів</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Картки ключових показників планування -->
+    <section class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-top">
+          <span class="kpi-label">Відібрано заходів</span>
+          <span class="kpi-icon">📋</span>
+        </div>
+        <div class="kpi-value" id="kpiTotal">—</div>
+        <div class="kpi-desc" id="kpiTotalSub">Повний обсяг річного плану</div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-top">
+          <span class="kpi-label">З фіксованим строком</span>
+          <span class="kpi-icon">📅</span>
+        </div>
+        <div class="kpi-value">
+          <span id="kpiDated">—</span>
+          <span class="kpi-pct" id="kpiDatedPct">0%</span>
+        </div>
+        <div class="kpi-desc">Квартальні та місячні дедлайни</div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-top">
+          <span class="kpi-label">Протягом року / постійно</span>
+          <span class="kpi-icon">🔄</span>
+        </div>
+        <div class="kpi-value">
+          <span id="kpiYear">—</span>
+          <span class="kpi-pct" id="kpiYearPct">0%</span>
+        </div>
+        <div class="kpi-desc">Безперервна системна робота</div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="kpi-top">
+          <span class="kpi-label">Міжпідроздільна взаємодія</span>
+          <span class="kpi-icon">🤝</span>
+        </div>
+        <div class="kpi-value">
+          <span id="kpiCollab">—</span>
+          <span class="kpi-pct" id="kpiCollabPct">0%</span>
+        </div>
+        <div class="kpi-desc">2 та більше співвиконавців</div>
+      </div>
+    </section>
+
+    <!-- Швидкий вибір кварталу -->
+    <section class="quarters-bar">
+      <div class="q-tile" data-q="I" onclick="toggleQuarter('I')">
+        <div>
+          <div class="q-title">І квартал</div>
+          <div class="q-sub">Січень – Березень</div>
+        </div>
+        <div class="q-num" id="qCountI">0</div>
+      </div>
+      <div class="q-tile" data-q="II" onclick="toggleQuarter('II')">
+        <div>
+          <div class="q-title">ІІ квартал</div>
+          <div class="q-sub">Квітень – Червень</div>
+        </div>
+        <div class="q-num" id="qCountII">0</div>
+      </div>
+      <div class="q-tile" data-q="III" onclick="toggleQuarter('III')">
+        <div>
+          <div class="q-title">ІІІ квартал</div>
+          <div class="q-sub">Липень – Вересень</div>
+        </div>
+        <div class="q-num" id="qCountIII">0</div>
+      </div>
+      <div class="q-tile" data-q="IV" onclick="toggleQuarter('IV')">
+        <div>
+          <div class="q-title">ІV квартал</div>
+          <div class="q-sub">Жовтень – Грудень</div>
+        </div>
+        <div class="q-num" id="qCountIV">0</div>
+      </div>
+      <div class="q-tile" data-q="YEAR" onclick="toggleQuarter('YEAR')">
+        <div>
+          <div class="q-title">Протягом року</div>
+          <div class="q-sub">Постійний цикл</div>
+        </div>
+        <div class="q-num" id="qCountYEAR">0</div>
+      </div>
+    </section>
+
+    <!-- Панель фільтрів -->
+    <section class="filters-box">
+      <div class="field">
+        <label for="filterDept">Структурний підрозділ</label>
+        <select id="filterDept" onchange="applyFilters()">
+          <option value="">Усі структурні підрозділи</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="filterSection">Розділ Плану роботи</label>
+        <select id="filterSection" onchange="applyFilters()">
+          <option value="">Усі розділи</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="filterQuarter">Термін виконання</label>
+        <select id="filterQuarter" onchange="applyFilters()">
+          <option value="">Усі терміни</option>
+          <option value="I">І квартал</option>
+          <option value="II">ІІ квартал</option>
+          <option value="III">ІІІ квартал</option>
+          <option value="IV">ІV квартал</option>
+          <option value="YEAR">Протягом року / постійно</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="filterType">Формат відповідальності</label>
+        <select id="filterType" onchange="applyFilters()">
+          <option value="">Усі формати</option>
+          <option value="single">Один підрозділ</option>
+          <option value="collab">Спільне виконання (2+ підрозділи)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="filterSearch">Пошук за змістом або індикатором</label>
+        <input type="text" id="filterSearch" placeholder="Введіть слово або номер (напр. 1.2)..." oninput="applyFilters()" />
+      </div>
+      <div class="field">
+        <button class="btn" style="width: 100%; justify-content: center;" onclick="resetFilters()">✕ Скинути фільтри</button>
+      </div>
+    </section>
+
+    <!-- Перемикач аналітичних вкладок -->
+    <div class="view-tabs">
+      <button class="tab-btn active" id="tabAnalytics" onclick="switchView('analytics')">📊 Розподіл за підрозділами та розділами</button>
+      <button class="tab-btn" id="tabHeatmap" onclick="switchView('heatmap')">🔥 Теплова карта навантаження (Підрозділ × Квартал)</button>
+    </div>
+
+    <!-- Вкладка 1: Аналітика по підрозділах та розділах -->
+    <section class="analytics-grid" id="viewAnalytics">
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-title">Навантаження на структурні підрозділи</span>
+          <span style="font-size: 12px; color: var(--text-secondary);">
+            <span style="color: var(--gov-blue); font-weight: 700;">■</span> Фіксований строк &nbsp;
+            <span style="color: #38bdf8; font-weight: 700;">■</span> Протягом року
+          </span>
+        </div>
+        <div class="dept-list" id="deptList"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-title">Розподіл за розділами Плану</span>
+          <span style="font-size: 12px; color: var(--text-secondary);">Натисніть для відбору</span>
+        </div>
+        <div class="sec-list" id="sectionList"></div>
+      </div>
+    </section>
+
+    <!-- Вкладка 2: Теплова карта (Матриця) -->
+    <section class="panel hidden" id="viewHeatmap">
+      <div class="panel-header">
+        <span class="panel-title">Матриця календарного навантаження підрозділів</span>
+        <span style="font-size: 12px; color: var(--text-secondary);">Клік по клітинці фільтрує заходи за підрозділом та періодом</span>
+      </div>
+      <div class="heatmap-wrap" id="heatmapContainer"></div>
+    </section>
+
+    <!-- Реєстр заходів -->
+    <section class="panel">
+      <div class="panel-header">
+        <span class="panel-title">Перелік заходів Плану роботи (<span id="tableCount">0</span>)</span>
+        <div style="display: flex; gap: 6px;">
+          <button class="tab-btn active" id="modeTable" onclick="setListMode('table')">Таблиця</button>
+          <button class="tab-btn" id="modeCards" onclick="setListMode('cards')">Картки</button>
+        </div>
+      </div>
+
+      <div class="table-wrap" id="tasksTableWrap">
+        <table class="plan-table">
+          <thead>
+            <tr>
+              <th>№ з/п</th>
+              <th>Зміст завдання</th>
+              <th>Термін виконання</th>
+              <th>Відповідальні за виконання</th>
+              <th>Очікуваний індикатор виконання</th>
+            </tr>
+          </thead>
+          <tbody id="tasksBody"></tbody>
+        </table>
+      </div>
+
+      <div class="cards-grid hidden" id="tasksCardsWrap"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 2026 Державна служба України у справах дітей • Аналітичний модуль планування</div>
+      <div>Джерело даних: синхронізований реєстр Плану роботи на 2026 рік</div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast">Скопійовано в буфер обміну</div>
+
+  <script>
+    const SHEET_ID = '10VAw8cK2dC4mgH7VdKZDtNlByxFEHazcjz06r7hT3bg';
+    const GID = '0';
+    const CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&gid=${GID}`;
+
+    let allTasks = [];
+    let currentFiltered = [];
+    let listMode = 'table';
+
+    // Доступність (gov.ua)
+    function toggleLargeFont() {
+      document.body.classList.toggle('a11y-large');
+      document.getElementById('btnFont').classList.toggle('active');
+    }
+
+    function toggleContrast() {
+      document.body.classList.toggle('a11y-contrast');
+      document.getElementById('btnContrast').classList.toggle('active');
+    }
+
+    // Перемикання аналітики / теплової карти
+    function switchView(view) {
+      document.getElementById('viewAnalytics').classList.toggle('hidden', view !== 'analytics');
+      document.getElementById('viewHeatmap').classList.toggle('hidden', view !== 'heatmap');
+      document.getElementById('tabAnalytics').classList.toggle('active', view === 'analytics');
+      document.getElementById('tabHeatmap').classList.toggle('active', view === 'heatmap');
+    }
+
+    // Перемикання Таблиця / Картки
+    function setListMode(mode) {
+      listMode = mode;
+      document.getElementById('tasksTableWrap').classList.toggle('hidden', mode !== 'table');
+      document.getElementById('tasksCardsWrap').classList.toggle('hidden', mode !== 'cards');
+      document.getElementById('modeTable').classList.toggle('active', mode === 'table');
+      document.getElementById('modeCards').classList.toggle('active', mode === 'cards');
+      renderTasksList(currentFiltered);
+    }
+
+    function parseCSV(text) {
+      const rows = [];
+      let row = [];
+      let cell = '';
+      let inQuotes = false;
+
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+        const nextChar = text[i + 1];
+
+        if (inQuotes) {
+          if (char === '"' && nextChar === '"') {
+            cell += '"';
+            i++;
+          } else if (char === '"') {
+            inQuotes = false;
+          } else {
+            cell += char;
+          }
+        } else {
+          if (char === '"') {
+            inQuotes = true;
+          } else if (char === ',') {
+            row.push(cell.trim());
+            cell = '';
+          } else if (char === '\r' && nextChar === '\n') {
+            row.push(cell.trim());
+            rows.push(row);
+            row = [];
+            cell = '';
+            i++;
+          } else if (char === '\n' || char === '\r') {
+            row.push(cell.trim());
+            rows.push(row);
+            row = [];
+            cell = '';
+          } else {
+            cell += char;
+          }
+        }
+      }
+      if (cell.length > 0 || row.length > 0) {
+        row.push(cell.trim());
+        rows.push(row);
+      }
+      return rows;
+    }
+
+    function extractDepartments(rawResp) {
+      if (!rawResp) return ['Не визначено'];
+      return rawResp
+        .split(/\n|;/)
+        .map(s => s.replace(/\s+/g, ' ').trim())
+        .filter(s => s.length > 2 && !/^відповідальн/i.test(s));
+    }
+
+    function classifyTerm(term) {
+      const t = (term || '').toLowerCase();
+      const isYearRound = t.includes('протягом року') || t.includes('постійно') || t.includes('щомісяц') || t.includes('щоквартал');
+
+      const quarters = [];
+      if (/\b(i|1|і)\s*квартал|січень|лютий|березень/.test(t)) quarters.push('I');
+      if (/\b(ii|2|іі)\s*квартал|квітень|травень|червень/.test(t)) quarters.push('II');
+      if (/\b(iii|3|ііі)\s*квартал|липень|серпень|вересень/.test(t)) quarters.push('III');
+      if (/\b(iv|4|іv)\s*квартал|жовтень|листопад|грудень/.test(t)) quarters.push('IV');
+
+      if (isYearRound && quarters.length === 0) {
+        quarters.push('YEAR');
+      }
+
+      return {
+        isYearRound: isYearRound && quarters.includes('YEAR'),
+        quarters
+      };
+    }
+
+    async function loadData() {
+      try {
+        const res = await fetch(`${CSV_URL}&t=${Date.now()}`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const csvText = await res.text();
+        const rows = parseCSV(csvText);
+
+        let currentSection = 'Загальні заходи';
+        const parsedTasks = [];
+
+        for (let i = 0; i < rows.length; i++) {
+          const r = rows[i];
+          const colA = (r[0] || '').trim();
+          const colB = (r[1] || '').trim();
+          const colC = (r[2] || '').trim();
+          const colD = (r[3] || '').trim();
+          const colE = (r[4] || '').trim();
+          // Колонки F та G повністю ігноруються
+
+          if (/^Розділ\s+\d+/i.test(colA)) {
+            currentSection = colA.replace(/\s+/g, ' ');
+            continue;
+          }
+
+          if (/^\d+\.\d+\.?$/.test(colA) && colB) {
+            const departments = extractDepartments(colD);
+            const termInfo = classifyTerm(colC);
+
+            parsedTasks.push({
+              num: colA,
+              section: currentSection,
+              task: colB.replace(/\s+/g, ' '),
+              term: colC.replace(/\s+/g, ' ') || 'Не вказано',
+              isYearRound: termInfo.isYearRound,
+              quarters: termInfo.quarters,
+              departments,
+              isCollab: departments.length > 1,
+              rawDept: colD.replace(/\s+/g, ' '),
+              indicator: colE.replace(/\s+/g, ' ') || '—'
+            });
+          }
+        }
+
+        allTasks = parsedTasks;
+
+        // Заповнення верхнього Hero-банера загальними цифрами
+        const allDepts = new Set();
+        const allSecs = new Set();
+        allTasks.forEach(t => {
+          t.departments.forEach(d => allDepts.add(d));
+          allSecs.add(t.section);
+        });
+        document.getElementById('heroTotal').textContent = allTasks.length;
+        document.getElementById('heroDepts').textContent = allDepts.size;
+        document.getElementById('heroSections').textContent = allSecs.size;
+
+        populateDropdowns();
+        renderHeatmap(allTasks);
+        applyFilters();
+
+        const now = new Date();
+        document.getElementById('syncTime').textContent =
+          `Актуально на ${now.toLocaleTimeString('uk-UA', { hour: '2-digit', minute: '2-digit' })}`;
+      } catch (err) {
+        showToast('Помилка завантаження таблиці. Перевірте доступ за посиланням.');
+      }
+    }
+
+    function populateDropdowns() {
+      const deptSelect = document.getElementById('filterDept');
+      const secSelect = document.getElementById('filterSection');
+      const prevDept = deptSelect.value;
+      const prevSec = secSelect.value;
+
+      const deptSet = new Set();
+      const secList = [];
+
+      allTasks.forEach(t => {
+        t.departments.forEach(d => deptSet.add(d));
+        if (!secList.includes(t.section)) secList.push(t.section);
+      });
+
+      const sortedDepts = Array.from(deptSet).sort((a, b) => a.localeCompare(b, 'uk'));
+      deptSelect.innerHTML = '<option value="">Усі структурні підрозділи</option>' +
+        sortedDepts.map(d => `<option value="${escapeHtml(d)}">${escapeHtml(d)}</option>`).join('');
+      if (sortedDepts.includes(prevDept)) deptSelect.value = prevDept;
+
+      secSelect.innerHTML = '<option value="">Усі розділи</option>' +
+        secList.map(s => `<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join('');
+      if (secList.includes(prevSec)) secSelect.value = prevSec;
+    }
+
+    function applyFilters() {
+      const dept = document.getElementById('filterDept').value;
+      const section = document.getElementById('filterSection').value;
+      const quarter = document.getElementById('filterQuarter').value;
+      const type = document.getElementById('filterType').value;
+      const search = document.getElementById('filterSearch').value.trim().toLowerCase();
+
+      document.querySelectorAll('.q-tile').forEach(tile => {
+        tile.classList.toggle('active', tile.dataset.q === quarter);
+      });
+
+      currentFiltered = allTasks.filter(t => {
+        if (dept && !t.departments.includes(dept)) return false;
+        if (section && t.section !== section) return false;
+        if (quarter && !t.quarters.includes(quarter)) return false;
+        if (type === 'collab' && !t.isCollab) return false;
+        if (type === 'single' && t.isCollab) return false;
+        if (search) {
+          const hay = `${t.num} ${t.task} ${t.indicator} ${t.rawDept}`.toLowerCase();
+          if (!hay.includes(search)) return false;
+        }
+        return true;
+      });
+
+      const baseForQuarters = allTasks.filter(t => {
+        if (dept && !t.departments.includes(dept)) return false;
+        if (section && t.section !== section) return false;
+        if (type === 'collab' && !t.isCollab) return false;
+        if (type === 'single' && t.isCollab) return false;
+        if (search) {
+          const hay = `${t.num} ${t.task} ${t.indicator} ${t.rawDept}`.toLowerCase();
+          if (!hay.includes(search)) return false;
+        }
+        return true;
+      });
+
+      renderKPIs(currentFiltered);
+      renderQuarterCounts(baseForQuarters);
+      renderDepartments(currentFiltered, dept);
+      renderSections(currentFiltered, section);
+      renderTasksList(currentFiltered);
+    }
+
+    function resetFilters() {
+      document.getElementById('filterDept').value = '';
+      document.getElementById('filterSection').value = '';
+      document.getElementById('filterQuarter').value = '';
+      document.getElementById('filterType').value = '';
+      document.getElementById('filterSearch').value = '';
+      applyFilters();
+    }
+
+    function toggleQuarter(q) {
+      const sel = document.getElementById('filterQuarter');
+      sel.value = (sel.value === q) ? '' : q;
+      applyFilters();
+    }
+
+    function renderKPIs(tasks) {
+      const total = tasks.length;
+      const yearRound = tasks.filter(t => t.isYearRound).length;
+      const dated = total - yearRound;
+      const collab = tasks.filter(t => t.isCollab).length;
+      const uniqueSecs = new Set(tasks.map(t => t.section)).size;
+
+      const pct = (v) => total ? Math.round((v / total) * 100) + '%' : '0%';
+
+      document.getElementById('kpiTotal').textContent = total;
+      document.getElementById('kpiTotalSub').textContent = `Розділів у вибірці: ${uniqueSecs}`;
+
+      document.getElementById('kpiDated').textContent = dated;
+      document.getElementById('kpiDatedPct').textContent = pct(dated);
+
+      document.getElementById('kpiYear').textContent = yearRound;
+      document.getElementById('kpiYearPct').textContent = pct(yearRound);
+
+      document.getElementById('kpiCollab').textContent = collab;
+      document.getElementById('kpiCollabPct').textContent = pct(collab);
+    }
+
+    function renderQuarterCounts(tasks) {
+      const counts = { I: 0, II: 0, III: 0, IV: 0, YEAR: 0 };
+      tasks.forEach(t => {
+        t.quarters.forEach(q => {
+          if (counts[q] !== undefined) counts[q]++;
+        });
+      });
+      document.getElementById('qCountI').textContent = counts.I;
+      document.getElementById('qCountII').textContent = counts.II;
+      document.getElementById('qCountIII').textContent = counts.III;
+      document.getElementById('qCountIV').textContent = counts.IV;
+      document.getElementById('qCountYEAR').textContent = counts.YEAR;
+    }
+
+    function renderDepartments(tasks, selectedDept) {
+      const map = new Map();
+      tasks.forEach(t => {
+        t.departments.forEach(d => {
+          if (!map.has(d)) map.set(d, { name: d, total: 0, dated: 0, year: 0 });
+          const st = map.get(d);
+          st.total++;
+          if (t.isYearRound) st.year++;
+          else st.dated++;
+        });
+      });
+
+      const list = Array.from(map.values()).sort((a, b) => b.total - a.total);
+      const box = document.getElementById('deptList');
+
+      if (!list.length) {
+        box.innerHTML = '<div style="padding:20px;color:var(--text-secondary);">Немає даних</div>';
+        return;
+      }
+
+      const max = list[0].total || 1;
+      box.innerHTML = list.map(d => {
+        const wDated = (d.dated / max) * 100;
+        const wYear = (d.year / max) * 100;
+        const active = selectedDept === d.name ? 'active' : '';
+        return `
+          <div class="dept-row ${active}" onclick="selectDept('${escapeAttr(d.name)}')">
+            <div class="dept-head">
+              <span class="dept-name">${escapeHtml(d.name)}</span>
+              <span class="dept-count">${d.total} зах.</span>
+            </div>
+            <div class="bar-track">
+              <div class="bar-seg-dated" style="width:${wDated}%" title="Фіксований строк: ${d.dated}"></div>
+              <div class="bar-seg-year" style="width:${wYear}%" title="Протягом року: ${d.year}"></div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function selectDept(name) {
+      const sel = document.getElementById('filterDept');
+      sel.value = (sel.value === name) ? '' : name;
+      applyFilters();
+    }
+
+    function renderSections(tasks, selectedSec) {
+      const map = new Map();
+      tasks.forEach(t => {
+        if (!map.has(t.section)) map.set(t.section, { title: t.section, total: 0 });
+        map.get(t.section).total++;
+      });
+
+      const box = document.getElementById('sectionList');
+      const list = Array.from(map.values());
+
+      box.innerHTML = list.map(s => {
+        const active = selectedSec === s.title ? 'active' : '';
+        return `
+          <div class="sec-row ${active}" onclick="selectSection('${escapeAttr(s.title)}')">
+            <span>${escapeHtml(s.title)}</span>
+            <span class="sec-badge">${s.total} зах.</span>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function selectSection(title) {
+      const sel = document.getElementById('filterSection');
+      sel.value = (sel.value === title) ? '' : title;
+      applyFilters();
+    }
+
+    // Фішка: Теплова карта (Підрозділ х Квартал)
+    function renderHeatmap(tasks) {
+      const map = new Map();
+      tasks.forEach(t => {
+        t.departments.forEach(d => {
+          if (!map.has(d)) map.set(d, { name: d, I: 0, II: 0, III: 0, IV: 0, YEAR: 0, total: 0 });
+          const row = map.get(d);
+          row.total++;
+          t.quarters.forEach(q => {
+            if (row[q] !== undefined) row[q]++;
+          });
+        });
+      });
+
+      const rows = Array.from(map.values()).sort((a, b) => b.total - a.total);
+      const heatBg = (val) => {
+        if (!val) return 'background: #f9fafb; color: #9ca3af;';
+        if (val <= 2) return 'background: #e6f0fa; color: #003366;';
+        if (val <= 5) return 'background: #93c5fd; color: #002b5c;';
+        return 'background: #0057b7; color: #ffffff;';
+      };
+
+      const html = `
+        <table class="heatmap-table">
+          <thead>
+            <tr>
+              <th>Структурний підрозділ</th>
+              <th>І кв.</th>
+              <th>ІІ кв.</th>
+              <th>ІІІ кв.</th>
+              <th>ІV кв.</th>
+              <th>Протягом року</th>
+              <th>Усього</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows.map(r => `
+              <tr>
+                <td>${escapeHtml(r.name)}</td>
+                ${['I', 'II', 'III', 'IV', 'YEAR'].map(q => `
+                  <td class="heat-cell" style="${heatBg(r[q])}" onclick="filterByMatrix('${escapeAttr(r.name)}', '${q}')">
+                    ${r[q] || '—'}
+                  </td>
+                `).join('')}
+                <td style="font-weight:800; color:var(--gov-navy);">${r.total}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      `;
+      document.getElementById('heatmapContainer').innerHTML = html;
+    }
+
+    function filterByMatrix(dept, q) {
+      document.getElementById('filterDept').value = dept;
+      document.getElementById('filterQuarter').value = q;
+      applyFilters();
+      document.getElementById('tasksTableWrap').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Відображення списку (Таблиця або Картки)
+    function renderTasksList(tasks) {
+      document.getElementById('tableCount').textContent = tasks.length;
+
+      if (listMode === 'table') {
+        const tbody = document.getElementById('tasksBody');
+        if (!tasks.length) {
+          tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:30px;">Заходів за обраними параметрами не знайдено</td></tr>';
+          return;
+        }
+        tbody.innerHTML = tasks.map((t, idx) => `
+          <tr>
+            <td>
+              <span class="num-chip" title="Натисніть, щоб скопіювати пункт" onclick="copyTask(${idx})">
+                ${escapeHtml(t.num)}
+              </span>
+            </td>
+            <td>
+              <div>
+                <span class="tag-sec">${escapeHtml(t.section)}</span>
+                ${t.isCollab ? '<span class="tag-collab">Спільний захід</span>' : ''}
+              </div>
+              <div><strong>${escapeHtml(t.task)}</strong></div>
+            </td>
+            <td>
+              <span class="term-badge ${t.isYearRound ? 'term-year' : 'term-dated'}">
+                ${escapeHtml(t.term)}
+              </span>
+            </td>
+            <td>${t.departments.map(d => `<div style="margin-bottom:3px;">• ${escapeHtml(d)}</div>`).join('')}</td>
+            <td style="color:var(--text-secondary);font-size:13px;">${escapeHtml(t.indicator)}</td>
+          </tr>
+        `).join('');
+      } else {
+        const cardsBox = document.getElementById('tasksCardsWrap');
+        if (!tasks.length) {
+          cardsBox.innerHTML = '<div style="padding:30px;color:var(--text-secondary);">Заходів не знайдено</div>';
+          return;
+        }
+        cardsBox.innerHTML = tasks.map((t, idx) => `
+          <div class="task-card">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                <span class="num-chip" onclick="copyTask(${idx})">${escapeHtml(t.num)}</span>
+                <span class="term-badge ${t.isYearRound ? 'term-year' : 'term-dated'}">${escapeHtml(t.term)}</span>
+              </div>
+              <div class="tag-sec">${escapeHtml(t.section)}</div>
+              <div style="font-weight:700;font-size:14px;color:var(--gov-navy);">${escapeHtml(t.task)}</div>
+            </div>
+            <div class="card-meta">
+              <div><strong>Відповідальні:</strong> ${escapeHtml(t.departments.join('; '))}</div>
+              <div><strong>Індикатор:</strong> ${escapeHtml(t.indicator)}</div>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    // Фішка: Копіювання пункту плану в буфер обміну
+    function copyTask(index) {
+      const t = currentFiltered[index];
+      if (!t) return;
+      const text = `Пункт ${t.num} (${t.section})\nЗавдання: ${t.task}\nТермін виконання: ${t.term}\nВідповідальні: ${t.departments.join('; ')}\nІндикатор виконання: ${t.indicator}`;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(`Пункт ${t.num} скопійовано в буфер обміну`);
+      });
+    }
+
+    // Фішка: Експорт відфільтрованого списку у CSV для Excel
+    function exportCSV() {
+      if (!currentFiltered.length) {
+        showToast('Немає даних для експорту');
+        return;
+      }
+      const headers = ['№ з/п', 'Розділ', 'Зміст завдання', 'Термін виконання', 'Відповідальні за виконання', 'Індикатор виконання'];
+      const csvRows = [headers.join(';')];
+
+      currentFiltered.forEach(t => {
+        const row = [
+          t.num,
+          t.section,
+          t.task,
+          t.term,
+          t.departments.join(' | '),
+          t.indicator
+        ].map(val => `"${String(val).replace(/"/g, '""')}"`);
+        csvRows.push(row.join(';'));
+      });
+
+      const blob = new Blob(['\uFEFF' + csvRows.join('\n')], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Plan_roboty_2026_${new Date().toISOString().slice(0, 10)}.csv`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('Файл CSV завантажено');
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2600);
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function escapeAttr(str) {
+      return String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+    }
+
+    loadData();
+  </script>
+</body>
+</html>

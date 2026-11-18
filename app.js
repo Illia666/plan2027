@@ -671,7 +671,10 @@ if (typeof document !== 'undefined') {
     closeTable();
 
     const box = $('#printReport');
-    box.innerHTML = html;
+    // обгортка з порожніми thead/tfoot створює поля на кожній сторінці,
+    // бо @page margin = 0 (так браузер не друкує дату, назву сторінки, адресу сайту й номери сторінок)
+    box.innerHTML = '<table class="rep-wrap"><thead><tr><td></td></tr></thead>' +
+      '<tfoot><tr><td></td></tr></tfoot><tbody><tr><td>' + html + '</td></tr></tbody></table>';
     box.hidden = false;
     document.body.classList.add('report-mode');
     const cleanup = () => {

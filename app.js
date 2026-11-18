@@ -428,8 +428,7 @@ if (typeof document !== 'undefined') {
     { key: 'resp', label: 'Відповідальні за виконання', w: '200px' },
     { key: 'term', label: 'Термін виконання', w: '140px' },
     { key: 'indicator', label: 'Індикатор виконання' },
-    { key: 'result', label: 'Очікуваний результат' },
-    { key: 'section', label: 'Розділ', w: '210px' }
+    { key: 'result', label: 'Очікуваний результат' }
   ];
 
   function sorted(list) {
@@ -491,13 +490,13 @@ if (typeof document !== 'undefined') {
       let h = '';
       if (t.priority !== lastPr) {
         const txt = 'Пріоритетний напрям: ' + (t.priority || '—');
-        h += table ? '<tr class="group-priority"><td colspan="7">' + esc(txt) + '</td></tr>'
+        h += table ? '<tr class="group-priority"><td colspan="6">' + esc(txt) + '</td></tr>'
                    : '<h3 class="group-priority">' + esc(txt) + '</h3>';
       }
       if (t.sectionNum !== lastSec || t.priority !== lastPr) {
         const txt = 'Розділ ' + t.sectionNum + '. ' + t.sectionTitle;
         const cnt = '<span class="group-count">завдань: ' + secCount[t.sectionNum] + '</span>';
-        h += table ? '<tr class="group-row"><td colspan="7">' + esc(txt) + ' ' + cnt + '</td></tr>'
+        h += table ? '<tr class="group-row"><td colspan="6">' + esc(txt) + ' ' + cnt + '</td></tr>'
                    : '<h4 class="group-row">' + esc(txt) + ' ' + cnt + '</h4>';
       }
       lastSec = t.sectionNum; lastPr = t.priority;
@@ -518,8 +517,7 @@ if (typeof document !== 'undefined') {
             '<td>' + hl(t.resp) + '</td>' +
             '<td>' + termTag(t) + '</td>' +
             '<td><div class="clamp">' + hl(t.indicator) + '</div></td>' +
-            '<td><div class="clamp">' + hl(t.result) + '</div></td>' +
-            '<td class="sec-cell">' + (t.sectionNum ? hl('Розділ ' + t.sectionNum + '. ' + t.sectionTitle) : '—') + '</td></tr>';
+            '<td><div class="clamp">' + hl(t.result) + '</div></td></tr>';
         }).join('') + '</tbody></table>';
       cardsWrap.innerHTML = '';
     } else {

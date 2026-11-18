@@ -131,8 +131,7 @@ input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--primary)
 .seg-btn.active { background: var(--primary); color: #fff; }
 
 .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; }
-table { width: 100%; border-collapse: collapse; font-size: .9rem; min-width: 1200px; }
-td.sec-cell { font-size: .82rem; color: var(--primary-dark); }
+table { width: 100%; border-collapse: collapse; font-size: .9rem; min-width: 980px; }
 thead th { background: var(--primary); color: #fff; text-align: left; padding: 0; position: sticky; top: 0; }
 thead button { all: unset; box-sizing: border-box; display: block; width: 100%; padding: 12px; cursor: pointer; font-weight: 700; font-size: .85rem; }
 thead button:hover { background: var(--primary-dark); }

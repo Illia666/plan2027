@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DSU">
+  <rect width="64" height="64" rx="14" fill="#1f3b8f"/>
+  <path d="M0 40h64v10a14 14 0 0 1-14 14H14A14 14 0 0 1 0 50z" fill="#ffd400"/>
+  <circle cx="32" cy="19" r="7" fill="#fff"/>
+  <path d="M18 36c0-8 6-12 14-12s14 4 14 12z" fill="#fff"/>
+  <text x="32" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1f3b8f">DSU</text>
+</svg>
